@@ -1,0 +1,4 @@
+#ifndef CODE_ALGORITHMS_H
+#define CODE_ALGORITHMS_H
+
+#endif //CODE_ALGORITHMS_H
