@@ -1,9 +1,31 @@
-#include "tasks_lab19/tasks.h"
-#include "libs/data_structures/matrix/matrix.h"
+#include <stdio.h>
+#include <stdlib.h>
 
+#define MAX_NUM 100000
 
 int main() {
-    task_01("K:\\clion\\course\\tasks_files\\matrices.txt");
-    task_02("K:\\clion\\course\\tasks_files\\double_file.txt");
-    task_03("K:\\clion\\course\\tasks_files\\expression_file.txt");
+    int n;
+    printf("количество в последовательности: ");
+    scanf("%d", &n);
+
+    int *posledovatelnost = (int *)malloc(n * sizeof(int));
+    int povtor[MAX_NUM] = {0};
+
+    printf("последовательность: ");
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &posledovatelnost[i]);
+        povtor[posledovatelnost[i]]++;
+    }
+
+    int oddCount = 0;
+    for (int i = 0; i < MAX_NUM; ++i) {
+        if (povtor[i] % 2 != 0) {
+            oddCount++;
+        }
+    }
+
+    printf("различные числа, нечетн раз: %d\n", oddCount);
+
+    free(posledovatelnost);
+    return 0;
 }
